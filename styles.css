@@ -22,12 +22,12 @@
    --three: #750BFC;
    --four: #FFFFFFBF;
    --five: #FF0000;
-   --sex: #FF000075;
+   --six: #FF000075;
    
    /* box shadow */
-  --shadow-sm: 0 0 30px linear-gradient(var(--three),var(--containe-bg));
-  --shadow-md: ;
-  --shadow-lg: ;
+   --shadow-sm: 0 0 30px rgba(117, 11, 252, 0.5);
+   --shadow-md: ;
+   --shadow-lg: ;
 }
 
 *{
@@ -37,6 +37,7 @@
    -ms-user-select: none;
    user-select: none;
 }
+
 body{
    width: 100%;
    height: 100vh;
@@ -58,125 +59,120 @@ body{
    flex-direction: column;
    align-items: center;
    gap: 3px;
-   
-   /* styling header */
-   header{
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 8px;
-   
-      & h3{
-         font-size: 45px;
-         margin-bottom: 10px;
-         font-family: "Lobster",sans-serif;
-         color: var(--three);
-         letter-spacing: 3px;
-         word-spacing: 3px;
-         cursor: text;
-      }
-      
-      /* content */
-      & .content{
-         width: 100%;
-         display: flex;
-         gap: 6px;
-         
-         /* input */
-         & input{
-            width: 83%;
-            padding: 10px;
-            border-radius: 3px;
-            border: none;
-            background: var(--input-bg);
-            font-size: 18px;
-            font-weight: 400;
-            outline: none;
-            transition: .3s;
-            
-            /* input:even */
-            &:focus{
-               border: 1px solid var(--three);
-               scale: 1.02;
-            }
-         }
-         
-         /* button */
-         & button{
-            width: 15%;
-            color: var(--one);
-            font-weight: 600;
-            font-size: 18px;
-            padding: 9px;
-            background: var(--three);
-            transition: .3s;
-            border-radius: 9px;
-            border: 1px solid var(--border-color);
-            display: flex;
-            justify-content: center;
-         }
-            /* button:even */
-         & button:hover{
-            animation: btn-add .3s ease-in-out forwards;        
-         }
-
-      }  
-      
-   }
-   
-   /* small */
-   & small{
-      display: none;
-      color: #FFAEAE;
-      width: 100%;
-      padding-top: 3px;
-      padding-left: 15px;
-      text-transform: capitalize;
-      font-size: 10px;
-   }
-
-   /* delet-all */
-   & #delet-all{
-      width: 100%;
-      padding: 9px;
-      display: none;
-      color: #fff;
-      margin-top: 10px;
-      border: 1px solid #FF0000;
-      background: #FF0000;
-      border-radius: 9px;
-   }
-
-      /* delet-all:even */
-   & #delet-all:hover{
-      animation: btn-delet-all .3s ease-in-out forwards;   
-   }
-   
-   /* footer */
-   & footer{
-       width: 100%;
-       margin-top: 10px;
-       background: none;
-       display: flex;
-       flex-direction: column;
-       gap: 5px;
-       border-radius: 4px;
-       
-       /* p */
-      & p{
-         background: #750BFC;
-         margin-bottom: px;
-         color: #fff;
-         border-radius: 3px;
-         padding: 10px;
-      }
-   }
-
 }
 
+/* styling header */
+.container header{
+   width: 100%;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   gap: 8px;
+}
 
+.container header h3{
+   font-size: 45px;
+   margin-bottom: 10px;
+   font-family: "Lobster",sans-serif;
+   color: var(--three);
+   letter-spacing: 3px;
+   word-spacing: 3px;
+   cursor: text;
+}
 
+/* content */
+.container header .content{
+   width: 100%;
+   display: flex;
+   gap: 6px;
+}
+
+/* input */
+.container header .content input{
+   width: 83%;
+   padding: 10px;
+   border-radius: 3px;
+   border: none;
+   background: var(--input-bg);
+   font-size: 18px;
+   font-weight: 400;
+   outline: none;
+   transition: .3s;
+}
+
+/* input:focus */
+.container header .content input:focus{
+   border: 1px solid var(--three);
+   scale: 1.02;
+}
+
+/* button */
+.container header .content button{
+   width: 15%;
+   color: var(--one);
+   font-weight: 600;
+   font-size: 18px;
+   padding: 9px;
+   background: var(--three);
+   transition: .3s;
+   border-radius: 9px;
+   border: 1px solid var(--border-color);
+   display: flex;
+   justify-content: center;
+}
+
+/* button:hover */
+.container header .content button:hover{
+   animation: btn-add .3s ease-in-out forwards;        
+}
+
+/* small */
+.container small{
+   display: none;
+   color: #FFAEAE;
+   width: 100%;
+   padding-top: 3px;
+   padding-left: 15px;
+   text-transform: capitalize;
+   font-size: 10px;
+}
+
+/* delet-all */
+.container #delet-all{
+   width: 100%;
+   padding: 9px;
+   display: none;
+   color: #fff;
+   margin-top: 10px;
+   border: 1px solid #FF0000;
+   background: #FF0000;
+   border-radius: 9px;
+}
+
+/* delet-all:hover */
+.container #delet-all:hover{
+   animation: btn-delet-all .3s ease-in-out forwards;   
+}
+
+/* footer */
+.container footer{
+   width: 100%;
+   margin-top: 10px;
+   background: none;
+   display: flex;
+   flex-direction: column;
+   gap: 5px;
+   border-radius: 4px;
+}
+
+/* p */
+.container footer p{
+   background: #750BFC;
+   margin-bottom: 0;
+   color: #fff;
+   border-radius: 3px;
+   padding: 10px;
+}
 
 /* animations */
 
@@ -184,7 +180,8 @@ body{
 @keyframes btn-add {
    from{
       color: var(--one);
-   } to{
+   }
+   to{
       color: var(--three);
       background: transparent;
       letter-spacing: 1px;
@@ -197,12 +194,13 @@ body{
    from{
       color: var(--one);
       background: var(--five);
-   } to{
+   }
+   to{
       color: var(--five);
       background: transparent;
       letter-spacing: 1px;
       translate: 2px -3px;
    }
 }
-/* end project */
 
+/* end project */
