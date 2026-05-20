@@ -1,7 +1,41 @@
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+/* تجهيزة الأشياء الآزمة */
+:root{
+   /* bg && color */
+   --backg-bg: #720EF8A3;
+   --containe-bg: #070708C2;
+   --border-color: #720EF8A3;
+
+   
+   /* element */
+   --element-bg: #750BFC;
+   --element-color: white;
+   
+   /* input */
+   --input-bg: #FFFFFFBF;
+   --input-color: black;
+   
+   /* colors */
+   --one: white;
+   --two: black;
+   --three: #750BFC;
+   --four: #FFFFFFBF;
+   --five: #FF0000;
+   --sex: #FF000075;
+   
+   /* box shadow */
+  --shadow-sm: 0 0 30px linear-gradient(var(--three),var(--containe-bg));
+  --shadow-md: ;
+  --shadow-lg: ;
+}
+
 *{
    padding: 0;
    margin: 0;
    font-family: system-ui;
+   -ms-user-select: none;
+   user-select: none;
 }
 body{
    width: 100%;
@@ -9,107 +43,166 @@ body{
    display: flex;
    align-items: center;
    justify-content: center;
-   background: darkslateblue;
+   background: var(--backg-bg);
 }
+
+/* start project */
 .container{
    width: 80%;
-   background: #C8C6C9AB;
-   padding: 10px;
-   padding-bottom: 3px;
+   background: var(--containe-bg);
+   padding: 40px 25px;
    border-radius: 7px;
-   border: 1px solid #73737359;
-   box-shadow: 0 0 10px #6B6B6BAB,
-   0 0 20px #272727AB,
-   0 0 30px #050505AB;
+   border: 1px solid var(--border-color);
+   box-shadow: var(--shadow-sm);
    display: flex;
    flex-direction: column;
    align-items: center;
-}
-header{
-   width: 100%;
-   display: flex;
-   flex-direction: column;
-   align-items: center;
-   gap: 8px;
-}
-header h3{
-   color: #750BFC;
-}
-header .inputs{
-   width: 100%;
-   display: flex;
-   gap: 6px;
-}
-
-header .inputs input, button{
-   width: 70%;
-   padding: 10px;
-   border-radius: 3px;
-   border: none;
-   background: #FFFFFFBF;
-   outline: none;
-}
-header input:focus{
-   box-shadow: 0 0 5px #90C2FE91,
-   0 0 10px #EEF7FF8C,
-   0 0 15px #FBFDFF00;
-   border: 1px solid #A088F8F0;
-}
-button{
-   width: 20%;
-   color: #750BFC;
-   padding: 9px;
-   background: transparent;
-   transition: .3s;
-   border: 1px solid #750BFC;
-}
-button:active,#delet-all:active{
-   background: #750BFC;
-   outline: none;
-   letter-spacing: 2px;
-   color: #fff;
-   box-shadow: 0 0 6px #B7B7B7B8,
-   0 0 10px #7F7F7F99,
-   0 0 15px #9898983D;
-
-}
-small{
-   display: none;
-   color: #FF000075;
-   width: 100%;
-   padding-top: 3px;
-   padding-left: 15px;
-   text-transform: capitalize;
-   font-size: 10px;
-}
-#delet-all{
-   width: 100%;
-   display: none;
-   color: #fff;
-   margin-top: 10px;
-   border-color: #FF0000;
-   background: #FF0000;
-   border-radius: 9999px;
-}
-#delet-all:active{
-   color: #FF0000;
-   background: none;
-}
-
-footer{
-   width: 100%;
-   margin-top: 10px;
-   background: none;
-   display: flex;
-   flex-direction: column;
-   gap: 5px;
-   border-radius: 4px;
-}
-footer p{
+   gap: 3px;
    
-   background: #750BFC;
-   margin-bottom: px;
-   color: #fff;
-   border-radius: 3px;
-   padding: 10px;
+   /* styling header */
+   header{
+      width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 8px;
+   
+      & h3{
+         font-size: 45px;
+         margin-bottom: 10px;
+         font-family: "Lobster",sans-serif;
+         color: var(--three);
+         letter-spacing: 3px;
+         word-spacing: 3px;
+         cursor: text;
+      }
+      
+      /* content */
+      & .content{
+         width: 100%;
+         display: flex;
+         gap: 6px;
+         
+         /* input */
+         & input{
+            width: 83%;
+            padding: 10px;
+            border-radius: 3px;
+            border: none;
+            background: var(--input-bg);
+            font-size: 18px;
+            font-weight: 400;
+            outline: none;
+            transition: .3s;
+            
+            /* input:even */
+            &:focus{
+               border: 1px solid var(--three);
+               scale: 1.02;
+            }
+         }
+         
+         /* button */
+         & button{
+            width: 15%;
+            color: var(--one);
+            font-weight: 600;
+            font-size: 18px;
+            padding: 9px;
+            background: var(--three);
+            transition: .3s;
+            border-radius: 9px;
+            border: 1px solid var(--border-color);
+            display: flex;
+            justify-content: center;
+            /* button:even */
+            &:hover{
+               animation: btn-add .3s ease-in-out forwards;
+            }
+         }
+
+      }  
+      
+   }
+   
+   /* small */
+   & small{
+      display: none;
+      color: #FFAEAE;
+      width: 100%;
+      padding-top: 3px;
+      padding-left: 15px;
+      text-transform: capitalize;
+      font-size: 10px;
+   }
+
+   /* delet-all */
+   & #delet-all{
+      width: 100%;
+      padding: 9px;
+      display: none;
+      color: #fff;
+      margin-top: 10px;
+      border: 1px solid #FF0000;
+      background: #FF0000;
+      border-radius: 9px;
+      
+      /* delet-all:even */
+      &:hover{
+         animation: btn-delet-all .3s ease-in-out forwards;
+      }
+   }
+   
+   /* footer */
+   & footer{
+       width: 100%;
+       margin-top: 10px;
+       background: none;
+       display: flex;
+       flex-direction: column;
+       gap: 5px;
+       border-radius: 4px;
+       
+       /* p */
+      & p{
+         background: #750BFC;
+         margin-bottom: px;
+         color: #fff;
+         border-radius: 3px;
+         padding: 10px;
+      }
+   }
+
 }
+
+
+
+
+/* animations */
+
+/* btn-add */
+@keyframes btn-add {
+   from{
+      color: var(--one);
+   } to{
+      color: var(--three);
+      background: transparent;
+      letter-spacing: 1px;
+      translate: 3px -1px;
+   }
+}
+
+/* btn-delet-all */
+@keyframes btn-delet-all {
+   from{
+      color: var(--one);
+      background: var(--five);
+   } to{
+      color: var(--five);
+      background: transparent;
+      letter-spacing: 1px;
+      translate: 2px -3px;
+   }
+}
+/* end project */
+
