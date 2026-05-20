@@ -115,10 +115,10 @@ body{
             border: 1px solid var(--border-color);
             display: flex;
             justify-content: center;
+         }
             /* button:even */
-            &:hover{
-               animation: btn-add .3s ease-in-out forwards;
-            }
+         & button:hover{
+            animation: btn-add .3s ease-in-out forwards;        
          }
 
       }  
@@ -146,11 +146,11 @@ body{
       border: 1px solid #FF0000;
       background: #FF0000;
       border-radius: 9px;
-      
+   }
+
       /* delet-all:even */
-      &:hover{
-         animation: btn-delet-all .3s ease-in-out forwards;
-      }
+   & #delet-all:hover{
+      animation: btn-delet-all .3s ease-in-out forwards;   
    }
    
    /* footer */
